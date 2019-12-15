@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "logis",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "microservice",
+    "baseName": "LOGS",
+    "packageName": "logis",
+    "packageFolder": "logis",
+    "serverPort": "8120",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTExMTExOTg5MzcxZTA0NTYyZDViNWZmN2Q4ZGQyODkyZjE1ZWI1YzUzNjMxODNhOGM1NWJmNzYxYmEyOWI4YTM3NWM2YzQwN2FiZGI3OWY0ZTM2ZDA2NDdiMzIzMmQ4OWMyNmQzODRjOTBjNzhmMzA0NGUyODBkZGI3MDlhNzI=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "es",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

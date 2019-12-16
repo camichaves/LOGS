@@ -1,0 +1,33 @@
+{
+    "name": "Loggss",
+    "fields": [
+        {
+            "fieldName": "idVenta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "paso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resultado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "explicacion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191215142209",
+    "entityTableName": "loggss",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "LOGS",
+    "applications": "*",
+    "microserviceName": "LOGS"
+}

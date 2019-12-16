@@ -1,0 +1,11 @@
+
+
+
+entity Loggss {
+	idVenta Integer,
+	paso String,
+	resultado String,
+    explicacion String
+}
+
+

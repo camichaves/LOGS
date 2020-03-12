@@ -119,7 +119,7 @@ public class LoggssResourceIT {
         int databaseSizeBeforeCreate = loggssRepository.findAll().size();
 
         // Create the Loggss
-        restLoggssMockMvc.perform(post("/api/loggsses")
+        restLoggssMockMvc.perform(post("/api/registro")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(loggss)))
             .andExpect(status().isCreated());
@@ -143,7 +143,7 @@ public class LoggssResourceIT {
         loggss.setId(1L);
 
         // An entity with an existing ID cannot be created, so this API call must fail
-        restLoggssMockMvc.perform(post("/api/loggsses")
+        restLoggssMockMvc.perform(post("/api/registro")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(loggss)))
             .andExpect(status().isBadRequest());
@@ -161,7 +161,7 @@ public class LoggssResourceIT {
         loggssRepository.saveAndFlush(loggss);
 
         // Get all the loggssList
-        restLoggssMockMvc.perform(get("/api/loggsses?sort=id,desc"))
+        restLoggssMockMvc.perform(get("/api/registro?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(loggss.getId().intValue())))
@@ -170,7 +170,7 @@ public class LoggssResourceIT {
             .andExpect(jsonPath("$.[*].resultado").value(hasItem(DEFAULT_RESULTADO)))
             .andExpect(jsonPath("$.[*].explicacion").value(hasItem(DEFAULT_EXPLICACION)));
     }
-    
+
     @Test
     @Transactional
     public void getLoggss() throws Exception {
@@ -178,7 +178,7 @@ public class LoggssResourceIT {
         loggssRepository.saveAndFlush(loggss);
 
         // Get the loggss
-        restLoggssMockMvc.perform(get("/api/loggsses/{id}", loggss.getId()))
+        restLoggssMockMvc.perform(get("/api/registro/{id}", loggss.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(loggss.getId().intValue()))
@@ -192,7 +192,7 @@ public class LoggssResourceIT {
     @Transactional
     public void getNonExistingLoggss() throws Exception {
         // Get the loggss
-        restLoggssMockMvc.perform(get("/api/loggsses/{id}", Long.MAX_VALUE))
+        restLoggssMockMvc.perform(get("/api/registro/{id}", Long.MAX_VALUE))
             .andExpect(status().isNotFound());
     }
 
@@ -214,7 +214,7 @@ public class LoggssResourceIT {
             .resultado(UPDATED_RESULTADO)
             .explicacion(UPDATED_EXPLICACION);
 
-        restLoggssMockMvc.perform(put("/api/loggsses")
+        restLoggssMockMvc.perform(put("/api/registro")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(updatedLoggss)))
             .andExpect(status().isOk());
@@ -237,7 +237,7 @@ public class LoggssResourceIT {
         // Create the Loggss
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
-        restLoggssMockMvc.perform(put("/api/loggsses")
+        restLoggssMockMvc.perform(put("/api/registro")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(loggss)))
             .andExpect(status().isBadRequest());
@@ -256,7 +256,7 @@ public class LoggssResourceIT {
         int databaseSizeBeforeDelete = loggssRepository.findAll().size();
 
         // Delete the loggss
-        restLoggssMockMvc.perform(delete("/api/loggsses/{id}", loggss.getId())
+        restLoggssMockMvc.perform(delete("/api/registro/{id}", loggss.getId())
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isNoContent());
 
